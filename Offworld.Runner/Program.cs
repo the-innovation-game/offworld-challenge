@@ -19,7 +19,7 @@ namespace Offworld.Runner
 
             Type algorithm = Utils.GetAlgorithm(args[0]);
             bool debug = bool.Parse(args[1]);
-            int numRuns = 3; //int numRuns = int.Parse(args[2]);
+            int numRuns = int.Parse(args[2]);
 
             for (int i = 0; i < numRuns; i++)
             {
