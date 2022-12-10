@@ -45,7 +45,7 @@ namespace Offworld.Algorithms
                 if (LiveGame)
                 {
                     // Only invoke AppGlobals functions if its a live game
-                    AppGlobals.GameHUDHelpers.DisplayChatMessage(getPlayer(), false, "Hello world!");
+                    AppGlobals.GameHUDHelpers.DisplayChatMessage(getPlayer(), false, "Hello George!");
                     // Other useful debug functions
                     // AppGlobals.GameHUDHelpers.CreateWorldText
                     // AppGlobals.GameHUDHelpers.HighlightTiles
