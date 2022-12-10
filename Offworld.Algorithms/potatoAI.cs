@@ -13,6 +13,7 @@ namespace Offworld.Algorithms
         }
         public override void AI_doActions(bool is_auction)
         {
+
             if (is_auction)
                 AI_doAuctionBid();
             else
@@ -59,7 +60,7 @@ namespace Offworld.Algorithms
             }
 
             {
-                int iProb = 2;
+                int iProb = 3;
 
                 if (gameServer().getAuctionTime() >= infos().Globals.AUCTION_TIME_BID)
                 {
@@ -77,7 +78,7 @@ namespace Offworld.Algorithms
                 }
             }
 
-            int iValue = 0;
+            int iValue = 1;
 
             switch (gameServer().getAuction())
             {
@@ -124,8 +125,8 @@ namespace Offworld.Algorithms
 
             if (iValue > 0)
             {
-                iValue *= 5;
-                iValue /= 4;
+                iValue *= 4;
+                iValue /= 2;
 
                 if (gameServer().isSevenSols())
                 {
@@ -133,11 +134,11 @@ namespace Offworld.Algorithms
                     iValue /= (gameServer().getLastDay() * 3);
                 }
 
-                iValue *= Math.Max(0, (infos().personality(getPersonality()).miAuctionValueModifier + 100));
-                iValue /= 100;
+                iValue *= Math.Max(0, (infos().personality(getPersonality()).miAuctionValueModifier + 25));
+                iValue /= 25;
 
-                iValue *= (50);
-                iValue /= (50 + getInterestRate());
+                iValue *= (25);
+                iValue /= (25 + getInterestRate());
 
                 int iNewBid = gameServer().getAuctionBid() + gameServer().getNextAuctionBid();
                 if (iNewBid <= iValue)
