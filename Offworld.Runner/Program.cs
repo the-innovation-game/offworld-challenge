@@ -31,12 +31,12 @@ namespace Offworld.Runner
             var start = DateTime.Now;
             var difficulty = new Difficulty(
                 // handicap for your AI. 0 = Applicant, ..., 8 = Guru (in-game difficulty setting)
-                yourHandicap: Random.Next(0, 9),
+                yourHandicap: 0,
 
                 //handicap for opponent AI. 0 = Guru, ..., 8 = Applicant (in-game difficulty setting)
-                opponentDifficulty: Random.Next(0, 9)
+                opponentDifficulty: 9
             );
-            int seed = Random.Next();
+            int seed = 12345;
             var challenge = difficulty.GenerateChallenge(seed);
             var solveResult = challenge.Solve(algorithm, debugMode: debug);
 
