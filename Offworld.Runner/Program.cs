@@ -11,7 +11,7 @@ namespace Offworld.Runner
             if (args.Length == 0)
             {
                 args = new string[] {
-                    $"potato", // typeof(Algorithms.DefaultAI).Name
+                    $"DefaultAI", // typeof(Algorithms.DefaultAI).Name
                     $"{true}",
                     $"{int.MaxValue}"
                 };
@@ -19,7 +19,7 @@ namespace Offworld.Runner
 
             Type algorithm = Utils.GetAlgorithm(args[0]);
             bool debug = bool.Parse(args[1]);
-            int numRuns = int.Parse(args[2]);
+            int numRuns = 3; //int numRuns = int.Parse(args[2]);
 
             for (int i = 0; i < numRuns; i++)
             {
@@ -36,7 +36,7 @@ namespace Offworld.Runner
                 //handicap for opponent AI. 0 = Guru, ..., 8 = Applicant (in-game difficulty setting)
                 opponentDifficulty: Random.Next(0, 9)
             );
-            int seed = 42;
+            int seed = Random.Next();
             var challenge = difficulty.GenerateChallenge(seed);
             var solveResult = challenge.Solve(algorithm, debugMode: debug);
 
