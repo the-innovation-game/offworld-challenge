@@ -8,9 +8,9 @@ using UnityEngine;
 
 namespace Offworld.Algorithms
 {
-    public class Template : Abstract
+    public class potato : Abstract
     {
-        public Template(GameClient pGame, bool liveGame, bool debugMode) : base(pGame, liveGame, debugMode)
+        public potato(GameClient pGame, bool liveGame, bool debugMode) : base(pGame, liveGame, debugMode)
         {
         }
         public override void AI_doActions(bool is_auction)
