@@ -1,8 +1,7 @@
 ﻿/*
     Acknowledgements:
-    Further tweaked on ImprovedDefaultParams by changing parameters.
+    Improved on DefaultAI by changing parameters.
 */
-
 
 using System;
 using Offworld.GameCore;
@@ -115,7 +114,7 @@ namespace Offworld.Algorithms
 
             if (iValue > 0)
             {
-                iValue *= 7;
+                iValue *= 6;
                 iValue /= 3;
 
                 if (gameServer().isSevenSols())
